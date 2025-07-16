@@ -1,4 +1,5 @@
 
+
 /***************************************************************************
  *                                                                         *
  *                     _____     ____                                      *
@@ -2278,7 +2279,7 @@ typedef struct sizeof_info_t
     int size;
     ccp name;
 }
-__attribute__ ((packed)) sizeof_info_t;
+DCLIB_PACKED_INTERNAL sizeof_info_t;
 
 //-----------------------------------------------------------------------------
 
@@ -5428,7 +5429,7 @@ typedef struct UsageCountEntry_t
     float	top1s;		// = 100.0*(utime+stime)/elapsed for 1s
     float	top5s;		// = 100.0*(utime+stime)/elapsed for 5s
 }
-__attribute__ ((packed)) UsageCountEntry_t;
+DCLIB_PACKED_INTERNAL UsageCountEntry_t;
 
 //-----------------------------------------------------------------------------
 //  [[UsageCount_t]]
@@ -5485,7 +5486,7 @@ typedef struct UsageDurationEntry_t
     float	top_cnt_1s;	// top number of counts in 1 sec
     float	top_cnt_5s;	// top number of counts in 5 sec
 }
-__attribute__ ((packed)) UsageDurationEntry_t;
+DCLIB_PACKED_INTERNAL UsageDurationEntry_t;
 
 //-----------------------------------------------------------------------------
 //  [[UsageDuration_t]]
@@ -5661,7 +5662,7 @@ typedef struct CpuUsageEntry_t
     float	topw1s;		// top number of waits in 1 sec
     float	topw5s;		// top number of waits in 5 sec
 }
-__attribute__ ((packed)) CpuUsageEntry_t;
+DCLIB_PACKED_INTERNAL CpuUsageEntry_t;
 
 //-----------------------------------------------------------------------------
 //  [[CpuUsage_t]]
@@ -6972,7 +6973,7 @@ typedef struct SaveRestoreTab_t
 	//struct SaveRestoreTab_t *ref;
     };
 }
-__attribute__ ((packed)) SaveRestoreTab_t;
+DCLIB_PACKED_INTERNAL SaveRestoreTab_t;
 
 //-----------------------------------------------------------------------------
 

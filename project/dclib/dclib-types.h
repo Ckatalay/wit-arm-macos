@@ -48,6 +48,21 @@
   #include <stdint.h>
 #endif
 
+//-----------------------------------------------------------------------------
+// ARM64 Compatibility: Conditional packed attribute
+//-----------------------------------------------------------------------------
+
+#ifdef ARM64_ALIGNMENT_FIX
+    // On ARM64, disable packing for internal structures to avoid alignment issues
+    // but keep it for file format structures that need exact binary layout
+    #define DCLIB_PACKED_INTERNAL     /* empty - no packing for internal structs */
+    #define DCLIB_PACKED_FORMAT       __attribute__ ((packed))  /* keep for file formats */
+#else
+    // On other platforms, use packed for all structures
+    #define DCLIB_PACKED_INTERNAL     __attribute__ ((packed))
+    #define DCLIB_PACKED_FORMAT       __attribute__ ((packed))
+#endif
+
 //
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////			endian				///////////////
@@ -534,6 +549,21 @@ typedef struct KeywordTab_t
 
   typedef u32		mode_t;
 
+#endif
+
+//-----------------------------------------------------------------------------
+// ARM64 Compatibility: Conditional packed attribute
+//-----------------------------------------------------------------------------
+
+#ifdef ARM64_ALIGNMENT_FIX
+    // On ARM64, disable packing for internal structures to avoid alignment issues
+    // but keep it for file format structures that need exact binary layout
+    #define DCLIB_PACKED_INTERNAL     /* empty - no packing for internal structs */
+    #define DCLIB_PACKED_FORMAT       __attribute__ ((packed))  /* keep for file formats */
+#else
+    // On other platforms, use packed for all structures
+    #define DCLIB_PACKED_INTERNAL     __attribute__ ((packed))
+    #define DCLIB_PACKED_FORMAT       __attribute__ ((packed))
 #endif
 
 //

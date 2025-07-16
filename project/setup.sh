@@ -69,8 +69,17 @@ fi
 GCC_VERSION="$( gcc --version | head -n1 | sed 's/([^)]*)//'|awk '{print $2}' )"
 [[ $GCC_VERSION > 7 ]] && xflags+=" -fdiagnostics-color=always"
 
+# ARM64/Apple Silicon specific flags for alignment issues
+if [[ $(uname -m) == "arm64" ]]; then
+    xflags+=" -fno-strict-aliasing"
+    # Suppress warnings about packed member addresses  
+    xflags+=" -Wno-address-of-packed-member"
+    # Use minimal optimization to avoid alignment issues
+    defines="$defines -DARM64_ALIGNMENT_FIX=1"
+fi
+
 gcc $xflags -E -DPRINT_SYSTEM_SETTINGS system.c \
-	| awk -F= '/^result_/ {printf("%s := %s\n",substr($1,8),gensub(/"/,"","g",$2))}' \
+	| awk -F= '/^result_/ { gsub(/"/,"",$2); printf("%s := %s\n",substr($1,8),$2) }' \
 	> Makefile.setup
 
 #--------------------------------------------------
