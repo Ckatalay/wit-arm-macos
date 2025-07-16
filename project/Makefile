@@ -530,17 +530,21 @@ chgrp:
 #
 #--------------------------
 
-.PHONY : clean
-clean:
-	@printf "$(LOGFORMAT)" rm "output files + distrib" ""
+.PHONY : clean-obj
+clean-obj:
+	@printf "$(LOGFORMAT)" rm "object files only" ""
 	@rm -f $(RM_FILES)
 	@rm -fr $(DISTRIB_RM)*
 	@cd dclib && rm -f $(DCLIB_PRIVATE)
 
+.PHONY : clean
+clean: clean-obj
+	@printf "$(LOGFORMAT)" rm "generated files" ""
+	@rm -f $(RM_FILES2)
+
 .PHONY : c+ clean+
 c+ clean+: clean
-	@printf "$(LOGFORMAT)" rm "test files + template output" ""
-	@rm -f $(RM_FILES2)
+	@printf "$(LOGFORMAT)" rm "docs + extra files" ""
 	-@rm -fr doc
 
 .PHONY : c++ clean++
