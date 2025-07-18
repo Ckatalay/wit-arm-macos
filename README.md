@@ -20,7 +20,7 @@
 modify and create Wii and GameCube ISO images and WBFS containers.
 Development started in 2009.
 
-**This fork adds ARM64/Apple Silicon compatibility** to the original project,
+**This fork adds ARM64/Apple silicon compatibility** to the original project,
 enabling the tools to build and run natively on Apple Silicon Macs and other ARM64 platforms.
 
 See https://wit.wiimm.de/ for original project details, documentation and downloads.
