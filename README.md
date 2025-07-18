@@ -85,5 +85,5 @@ ARM64 compatibility layer added in 2025.
 </dd>
 </dl>
 
-*Original project by Wiimm, 2009-2024*  
+*Original project by Wiimm, 2009-2022*  
 *ARM64 compatibility modifications by Çağatay Kağan Atalay, 2025*
