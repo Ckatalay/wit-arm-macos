@@ -21,7 +21,7 @@ modify and create Wii and GameCube ISO images and WBFS containers.
 Development started in 2009.
 
 **This fork adds ARM64/Apple silicon compatibility** to the original project,
-enabling the tools to build and run natively on Apple Silicon Macs and other ARM64 platforms.
+enabling the tools to build and run natively on Apple silicon Macs and other ARM64 platforms.
 
 See https://wit.wiimm.de/ for original project details, documentation and downloads.
 
@@ -31,12 +31,12 @@ This version includes the following enhancements for ARM64 platforms:
 
 - **Memory Alignment Fixes**: Resolved ARM64-specific pointer alignment issues
 - **Conditional Packed Attributes**: Smart structure packing that preserves binary compatibility while ensuring proper alignment
-- **Apple Silicon Support**: Native compilation and execution on M1/M2/M3 Macs
+- **Apple silicon Support**: Native compilation and execution on M1/M2/M3 Macs
 - **Cross-Platform Build System**: Automatic detection and configuration for ARM64 vs x86 architectures
 
 ### Supported Platforms
 
-- ✅ **Apple Silicon Macs** (M1, M2, M3+) - Native ARM64
+- ✅ **Apple silicon Mac computers** (M1, M2, M3 etc.) - Native ARM64
 - ✅ **Linux ARM64** - Native ARM64 
 - ✅ **Linux x86/x86_64** - Original compatibility maintained
 - ✅ **Windows x86/x86_64** - Original compatibility maintained
